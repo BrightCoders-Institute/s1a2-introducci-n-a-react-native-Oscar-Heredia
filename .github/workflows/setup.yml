@@ -1,0 +1,29 @@
+name: BrightCoders playbook setup
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Overwrite file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: instructions.md
+          write-mode: append
+          contents: |
+            'Participa en el foro compartiendo recursos o tips de aprendizaje o estudio'
+            
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.PLAYBOOK_SECRET }}
+          branch: feedback
+          force: true
+          message: 'Updated by BrightCoders Playbook'
