@@ -8,7 +8,7 @@ This README would normally document whatever steps are necessary to get the appl
 
 Things you may want to cover:
 
-- Title or Project Name
+- IMC APP
 - Table of contents
 - Description. A brief description of what the project is about
 - How to Install and Run the Project.
